@@ -1,11 +1,22 @@
-import movieData from '../sampleData';
-import logo from './logo.svg';
-import './App.css';
+import movieData from '../../sampleData'
+import Movies from '../Movies/Movies'
+import './App.css'
+import { Component } from 'react'
 
-function App() {
-  return (
-   
-  );
+class App extends Component {
+  constructor() {
+    super() 
+    this.state = []
+  }
+
+  render() {
+    return (
+      <main>
+        <h1>Tiny Tomatoes</h1>
+        <Movies />
+      </main>
+    )
+  }
 }
 
-export default App;
+export default App
