@@ -1,10 +1,13 @@
 import React from 'react';
 import './Movies.css'
+import MovieCard from '../MovieCard/MovieCard';
 
 const Movies = () => {
   return (
     <div className='movie-container'>
-      <h2>MOVIE CONTAINER</h2>
+      <MovieCard />
+      <MovieCard />
+      <MovieCard />
     </div>
   )
 }
