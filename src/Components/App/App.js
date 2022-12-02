@@ -2,6 +2,7 @@ import movieData from '../../sampleData'
 import Movies from '../Movies/Movies'
 import './App.css'
 import { Component } from 'react'
+const logo = require('../../Images/cherry-tomato.png')
 
 class App extends Component {
   constructor() {
@@ -14,10 +15,10 @@ class App extends Component {
   render() {
     return (
       <main>
-        <div>
-          <img className='logo' src="../images/cherry-tomato.png' alt='cherry tomatoes on vine"/>
+        <header>
+          <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
           <h1>Tiny Tomatoes</h1>
-        </div>
+        </header>
         <Movies movies={this.state.movies}/>
       </main>
     )
