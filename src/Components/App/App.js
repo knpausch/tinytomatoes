@@ -14,7 +14,10 @@ class App extends Component {
   render() {
     return (
       <main>
-        <h1>Tiny Tomatoes</h1>
+        <div>
+          <img className='logo' src="../images/cherry-tomato.png' alt='cherry tomatoes on vine"/>
+          <h1>Tiny Tomatoes</h1>
+        </div>
         <Movies movies={this.state.movies}/>
       </main>
     )
