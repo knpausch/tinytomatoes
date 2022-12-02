@@ -1,0 +1,8 @@
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 3vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vh;
+}
