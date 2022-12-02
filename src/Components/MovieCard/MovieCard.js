@@ -1,10 +1,11 @@
 import React from "react";
 import './MovieCard.css';
 
-const MovieCard = () => {
+const MovieCard = ({title}) => {
+ 
   return (
     <div className='movie-card'>
-      <h3>MOVIE POSTER</h3>
+      <h3>{title}</h3>
     </div>
   )
 }
