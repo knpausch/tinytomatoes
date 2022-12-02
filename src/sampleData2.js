@@ -14,3 +14,5 @@ const selectedMovieData =
         runtime: 139, 
         tagline: "It's a movie!" } 
 }
+
+export default selectedMovieData
