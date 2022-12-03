@@ -11,7 +11,7 @@ const MovieDetails = ({ singleMovie, displayHome }) => {
                     <h2>{singleMovie.movie.title}</h2>
                     <p>{singleMovie.movie.tagline}</p>
                     <p>Genre: {singleMovie.movie.genres}</p>
-                    <p>Rating: {singleMovie.movie.average_rating}/10</p>
+                    <p>Rating: {singleMovie.movie.average_rating.toFixed(2)}/10</p>
                     <br></br>
                     <h3>Overview:</h3>
                     <p>{singleMovie.movie.overview}</p>
