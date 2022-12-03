@@ -11,23 +11,22 @@ class App extends Component {
     super() 
     this.state = {
       movies: [],
-      singleMovie: ""
+      singleMovie: "",
+      movieID: ""
     } 
   }
 
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => response.json())
-    .then(data => {
-      console.log("KIKO", data.movies)
-      this.setState({movies: data.movies})
-      return
-    })
+    .then(data => {this.setState({movies: data.movies})})
   }
 
-  // seeMovieDetails = () => {
-  //   this.setState({movies: movieData, singleMovie: selectedMovieData})
-  // }
+  seeMovieDetails = (id) => {
+    // this.setState({movies: movieData, singleMovie: selectedMovieData})
+    console.log("ID", id)
+    this.setState({movieID: id})
+  }
 
   // displayHome = () => {
   //   this.setState({movies: movieData, singleMovie: ""})
@@ -40,7 +39,7 @@ class App extends Component {
           <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
           <h1>Tiny Tomatoes</h1>
         </header>
-        <Movies movies={this.state.movies} />
+        <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} />
         {/* {this.state.singleMovie === "" ? 
         <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} /> : 
         <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/>} */}
