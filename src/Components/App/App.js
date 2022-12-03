@@ -15,6 +15,11 @@ class App extends Component {
     } 
   }
 
+  seeMovieDetails = () => {
+    // this.setState({singleMovie: selectedMovieData.overview})
+    console.log("yay")
+  }
+
   render() {
     return (
       <main>
@@ -22,7 +27,9 @@ class App extends Component {
           <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
           <h1>Tiny Tomatoes</h1>
         </header>
-        <Movies movies={this.state.movies}/>
+        <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails}/>
+        <MovieDetails seeMovieDetails={this.seeMovieDetails}/>
+
         {/* <MovieDetails singleMovie={this.state.singleMovie}/> */}
       </main>
     )

@@ -1,11 +1,10 @@
 import React from "react";
 import './MovieCard.css';
 
-const MovieCard = ({image, key, id}) => {
-  console.log(key)
+const MovieCard = ({image, id, seeMovieDetails}) => {
   return (
     <div>
-      <img className='poster' src={image} id={id}/>
+      <img onClick={() => seeMovieDetails(id)} className='poster' src={image} id={id}/>
     </div>
   )
 }
