@@ -1,9 +1,10 @@
 import React from 'react'
 import './MovieDetails.css'
 
-const MovieDetails = ({}) => {
+const MovieDetails = ({ singleMovie }) => {
+    // console.log("SINGLE MOVIE:", singleMovie.movie.overview)
     return (
-        <h1>Movie Details</h1>
+        <h1>{singleMovie.movie.overview}</h1>
     )
 }
 
