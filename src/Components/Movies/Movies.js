@@ -3,7 +3,7 @@ import './Movies.css'
 import MovieCard from '../MovieCard/MovieCard';
 
 const Movies = ({ movies, seeMovieDetails}) => {
-  const singleMovie = movies.movies.map(movie => {
+  const singleMovie = movies.map(movie => {
     return (
       <MovieCard
         image={movie['poster_path']}
