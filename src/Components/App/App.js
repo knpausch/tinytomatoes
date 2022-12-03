@@ -30,7 +30,7 @@ class App extends Component {
           <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
           <h1>Tiny Tomatoes</h1>
         </header>
-        {this.state.singleMovie==="" ? 
+        {this.state.singleMovie === "" ? 
         <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} /> : 
         <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/>}
       </main>
