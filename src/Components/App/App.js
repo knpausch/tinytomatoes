@@ -1,4 +1,4 @@
-import movieData from '../../sampleData'
+// import movieData from '../../sampleData'
 import Movies from '../Movies/Movies'
 import './App.css'
 import { Component } from 'react'
@@ -10,18 +10,28 @@ class App extends Component {
   constructor() {
     super() 
     this.state = {
-      movies: movieData,
+      movies: [],
       singleMovie: ""
     } 
   }
 
-  seeMovieDetails = () => {
-    this.setState({movies: movieData, singleMovie: selectedMovieData})
+  componentDidMount() {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(response => response.json())
+    .then(data => {
+      console.log("KIKO", data.movies)
+      this.setState({movies: data.movies})
+      return
+    })
   }
 
-  displayHome = () => {
-    this.setState({movies: movieData, singleMovie: ""})
-  }
+  // seeMovieDetails = () => {
+  //   this.setState({movies: movieData, singleMovie: selectedMovieData})
+  // }
+
+  // displayHome = () => {
+  //   this.setState({movies: movieData, singleMovie: ""})
+  // }
 
   render() {
     return (
@@ -30,9 +40,10 @@ class App extends Component {
           <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
           <h1>Tiny Tomatoes</h1>
         </header>
-        {this.state.singleMovie === "" ? 
+        <Movies movies={this.state.movies} />
+        {/* {this.state.singleMovie === "" ? 
         <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} /> : 
-        <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/>}
+        <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/>} */}
       </main>
     )
   }
