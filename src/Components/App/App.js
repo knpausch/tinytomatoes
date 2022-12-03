@@ -23,9 +23,9 @@ class App extends Component {
   }
 
   seeMovieDetails = (id) => {
-    // this.setState({movies: movieData, singleMovie: selectedMovieData})
-    console.log("ID", id)
-    this.setState({movieID: id})
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+    .then(response => response.json())
+    .then(data => {this.setState({singleMovie: data, movieID: id})})
   }
 
   // displayHome = () => {
