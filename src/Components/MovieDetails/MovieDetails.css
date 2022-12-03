@@ -1,0 +1,52 @@
+.movieDetailContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.movieDetails{
+    display: flex;
+}
+
+.poster-mini{
+    width: 20%;
+    height: 20%;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vw;
+    border-radius: 0.5em;
+    border: solid 2px #A68555;
+}
+
+.movieInfo{
+    margin-right: 5vw;
+    margin-bottom: 5vw;
+    background: #E3DBC3;
+    color: #0E1226;
+    border: solid 2px #A68555;
+    border-radius: 0.5em;
+    height: 56vh;
+    max-height:100%;
+    overflow:auto;
+}
+
+.homeButton{
+    background-color: #E3DBC3;
+    color: #0E1226;
+    border: solid 2px #A68555;
+    border-radius: 0.5em;
+    width: 10%;
+    font-size: 1.5em;
+    margin-bottom: 2vw;
+    margin-right: 5vw;
+}
+
+p, h2, h3{
+    margin: 0;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+h2{
+    margin-top: 1.5vw;
+}

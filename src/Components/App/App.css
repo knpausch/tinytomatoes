@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Aref+Ruqaa');
-
 * {
   font-family: 'Aref Ruqaa';
+}
+
+body {
   background-color: #0E1226;
   color: #A68555;
 }
