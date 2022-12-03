@@ -23,7 +23,7 @@ class App extends Component {
   seeMovieDetails = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
     .then(response => response.json())
-    .then(data => {this.setState({singleMovie: data, movieID: id})})
+    .then(data => {this.setState({singleMovie: data.movie, movieID: id})})
   }
 
   displayHome = () => {
