@@ -11,13 +11,13 @@ class App extends Component {
     super() 
     this.state = {
       movies: movieData,
-      singleMovie: selectedMovieData
+      singleMovie: ""
     } 
   }
 
-  seeMovieDetails = (id) => {
-    this.setState({singleMovie: selectedMovieData.overview})
-    console.log("yay" + id)
+  seeMovieDetails = () => {
+    this.setState({movies: movieData, singleMovie: selectedMovieData})
+    console.log("yay " + this.state.singleMovie)
   }
 
   render() {
@@ -27,8 +27,11 @@ class App extends Component {
           <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
           <h1>Tiny Tomatoes</h1>
         </header>
-        <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} />
-        <MovieDetails singleMovie={this.state.singleMovie} />
+
+        {this.state.singleMovie==="" ? <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} /> : <MovieDetails singleMovie={this.state.singleMovie} />}
+
+        {/* <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} />
+        <MovieDetails singleMovie={this.state.singleMovie} /> */}
       </main>
     )
   }

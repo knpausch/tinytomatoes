@@ -4,7 +4,7 @@ import './MovieCard.css';
 const MovieCard = ({image, id, seeMovieDetails}) => {
   return (
     <div>
-      <img onClick={() => seeMovieDetails(id)} className='poster' src={image} id={id}/>
+      <img onClick={() => seeMovieDetails()} className='poster' src={image} id={id}/>
     </div>
   )
 }
