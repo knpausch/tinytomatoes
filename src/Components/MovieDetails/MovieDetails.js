@@ -3,24 +3,43 @@ import './MovieDetails.css'
 
 const MovieDetails = ({ singleMovie }) => {
     return (
-        <div>
-            <div>
-                <img className='poster-mini' src={singleMovie.movie.poster_path}/>
+        <div className='movieDetailContainer'>
+            <button className='homeButton'>Home</button>
+            <div className='movieDetails'>
+                <img className='poster-mini' src={singleMovie.movie.poster_path} />
+                <div className='movieInfo'>
+                    <h2>{singleMovie.movie.title}</h2>
+                    <p>{singleMovie.movie.tagline}</p>
+                    <p>Genre: {singleMovie.movie.genres}</p>
+                    <p>Rating: {singleMovie.movie.average_rating}/10</p>
+                    <br></br>
+                    <h3>Overview:</h3>
+                    <p>{singleMovie.movie.overview}</p>
+                    <br></br>
+                    <p>Release Date: {formatDate(singleMovie.movie.release_date)}</p>
+                    <p>Runtime: {singleMovie.movie.runtime} min</p>
+                    <p>Budget: ${formatCurrency(singleMovie.movie.budget)}</p>
+                    <p>Revenue: ${formatCurrency(singleMovie.movie.revenue)}</p>
+                </div>
             </div>
-            <div>
-                <h1>{singleMovie.movie.title}</h1>
-                <h3>{singleMovie.movie.tagline}</h3>
-                <h3>Genre: {singleMovie.movie.genres}</h3>
-                <h3>Rating: {singleMovie.movie.average_rating}/10</h3>
-                <p>{singleMovie.movie.overview}</p>
-                <h4>{singleMovie.movie.release_date}</h4>
-                <h4>Runtime: {singleMovie.movie.runtime} min</h4>
-                <h4>Budget: ${singleMovie.movie.budget}</h4>
-                <h4>Revenue: ${singleMovie.movie.revenue}</h4>
-            </div>
-            <button>Home</button>
         </div>
     )
 }
+
+const formatDate = (date) => {
+    date = date.split('-')
+    let year = date.splice(0,1)
+    date.push(year[0])
+    date = date.join('/')
+    return date
+}
+
+const formatCurrency = (amount) => {
+    amount = amount.toLocaleString()
+    return amount
+}
+
+
+
 
 export default MovieDetails
