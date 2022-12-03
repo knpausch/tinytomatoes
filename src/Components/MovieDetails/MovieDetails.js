@@ -1,10 +1,10 @@
 import React from 'react'
 import './MovieDetails.css'
 
-const MovieDetails = ({ singleMovie }) => {
+const MovieDetails = ({ singleMovie, displayHome }) => {
     return (
         <div className='movieDetailContainer'>
-            <button className='homeButton'>Home</button>
+            <button onClick={() => displayHome()} className ='homeButton'>Home</button>
             <div className='movieDetails'>
                 <img className='poster-mini' src={singleMovie.movie.poster_path} />
                 <div className='movieInfo'>
@@ -38,8 +38,5 @@ const formatCurrency = (amount) => {
     amount = amount.toLocaleString()
     return amount
 }
-
-
-
 
 export default MovieDetails
