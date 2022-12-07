@@ -42,20 +42,16 @@ class App extends Component {
           <h1>Tiny Tomatoes</h1>
         </header>
         <Route exact path="/" render={() => {
-          return <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails}/>
+          return this.state.error ? <h2>{this.state.error}</h2> :
+          <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails}/>
         }}/>
          <Route exact path="/:id" render={() => {
-          return <MovieDetails singleMovie={this.state.singleMovie}/>
+          return this.state.error ? <h2>{this.state.error}</h2> :
+          <MovieDetails singleMovie={this.state.singleMovie}/>
         }}/>
       </main>
     )
   }
 }
-
-    {/* // {(!this.state.error && !this.state.singleMovie) ? 
-        // <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} /> : 
-        // (!this.state.error && this.state.singleMovie) ?
-        // <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/> :
-        // this.state.error ? <h2>{this.state.error}</h2> : null} */}
 
 export default App
