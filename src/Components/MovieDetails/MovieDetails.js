@@ -1,29 +1,38 @@
 import React from 'react'
 import './MovieDetails.css'
+import { NavLink } from 'react-router-dom'
 
 const MovieDetails = ({ singleMovie, displayHome }) => {
     return (
         <div className='movieDetailContainer'>
-            <button onClick={() => displayHome()} className ='homeButton'>Home</button>
+            <NavLink to='/'><button onClick={() => displayHome()} className ='homeButton'>Home</button></NavLink>
             <div className='movieDetails'>
                 <img className='poster-mini' src={singleMovie.poster_path} />
                 <div className='movieInfo'>
                     <h2>{singleMovie.title}</h2>
-                    {singleMovie.tagline.length>0 && <p>"{singleMovie.tagline}"</p>}
-                    <p>Genre: {singleMovie.genres.join(", ")}</p>
-                    <p>Rating: {singleMovie.average_rating.toFixed(2)}/10</p>
+                    {singleMovie.tagline && <p>"{singleMovie.tagline}"</p>}
+                    {(singleMovie.genres != undefined && singleMovie.genres.length>0) && <p>Genres: {formatGenres(singleMovie.genres)}</p>}
+                    {singleMovie.average_rating && <p>Rating: {formatRating(singleMovie.average_rating)}</p>}
                     <br></br>
-                    <h3>Overview:</h3>
-                    <p>{singleMovie.overview}</p>
+                    {singleMovie.overview && <h3>Overview:</h3>}
+                    {singleMovie.overview && <p>{singleMovie.overview}</p>}
                     <br></br>
-                    <p>Release Date: {formatDate(singleMovie.release_date)}</p>
-                    <p>Runtime: {singleMovie.runtime} min</p>
+                    {singleMovie.release_date && <p>Release Date: {formatDate(singleMovie.release_date)}</p>}
+                    {singleMovie.runtime>0 && <p>Runtime: {singleMovie.runtime} min</p>}
                     {singleMovie.budget>0 && <p>Budget: ${formatCurrency(singleMovie.budget)}</p>}
                     {singleMovie.revenue>0 && <p>Revenue: ${formatCurrency(singleMovie.revenue)}</p>}
                 </div>
             </div>
         </div>
     )
+}
+
+const formatGenres = (genres) => {
+  return genres.join(", ")
+} 
+
+const formatRating = (rating) => {
+  return rating.toFixed(2)+"/10"
 }
 
 const formatDate = (date) => {

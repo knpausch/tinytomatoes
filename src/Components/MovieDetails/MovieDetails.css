@@ -26,6 +26,7 @@
     border: solid 2px #A68555;
     border-radius: 0.5em;
     height: 56vh;
+    width: 70vw;
     max-height:100%;
     overflow:auto;
 }
@@ -35,7 +36,7 @@
     color: #0E1226;
     border: solid 2px #A68555;
     border-radius: 0.5em;
-    width: 10%;
+    width: 10vw;
     font-size: 1.5em;
     margin-bottom: 2vw;
     margin-right: 5vw;
