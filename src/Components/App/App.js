@@ -2,6 +2,7 @@ import Movies from '../Movies/Movies'
 import './App.css'
 import { Component } from 'react'
 import MovieDetails from '../MovieDetails/MovieDetails'
+import { Route, NavLink } from 'react-router-dom'
 const logo = require('../../Images/cherry-tomato.png')
 
 class App extends Component {
@@ -36,18 +37,26 @@ class App extends Component {
   render() {
     return (
       <main>
+        {/* <NavLink></NavLink> */}
         <header>
           <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
           <h1>Tiny Tomatoes</h1>
         </header>
-        {(!this.state.error && !this.state.singleMovie) ? 
-        <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} /> : 
-        (!this.state.error && this.state.singleMovie) ?
-        <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/> :
-        this.state.error ? <h2>{this.state.error}</h2> : null}
+        <Route exact path="/" render={() => {
+          
+          return <Movies movies={this.state.movies}/>
+          {console.log(this.state.movies)}
+        }}/>
+        
       </main>
     )
   }
 }
+
+    {/* // {(!this.state.error && !this.state.singleMovie) ? 
+        // <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails} /> : 
+        // (!this.state.error && this.state.singleMovie) ?
+        // <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/> :
+        // this.state.error ? <h2>{this.state.error}</h2> : null} */}
 
 export default App
