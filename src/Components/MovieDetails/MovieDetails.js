@@ -1,10 +1,11 @@
 import React from 'react'
 import './MovieDetails.css'
+import { NavLink } from 'react-router-dom'
 
 const MovieDetails = ({ singleMovie, displayHome }) => {
     return (
         <div className='movieDetailContainer'>
-            <button onClick={() => displayHome()} className ='homeButton'>Home</button>
+            <NavLink to='/'><button onClick={() => displayHome()} className ='homeButton'>Home</button></NavLink>
             <div className='movieDetails'>
                 <img className='poster-mini' src={singleMovie.poster_path} />
                 <div className='movieInfo'>
