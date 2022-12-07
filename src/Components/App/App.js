@@ -37,17 +37,16 @@ class App extends Component {
   render() {
     return (
       <main>
-        {/* <NavLink></NavLink> */}
         <header>
           <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
           <h1>Tiny Tomatoes</h1>
         </header>
         <Route exact path="/" render={() => {
-          
-          return <Movies movies={this.state.movies}/>
-          {console.log(this.state.movies)}
+          return <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails}/>
         }}/>
-        
+         <Route exact path="/:id" render={() => {
+          return <MovieDetails singleMovie={this.state.singleMovie}/>
+        }}/>
       </main>
     )
   }
