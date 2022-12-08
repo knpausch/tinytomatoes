@@ -1,7 +1,8 @@
-import React from 'react';
+import React from 'react'
 import './Movies.css'
-import MovieCard from '../MovieCard/MovieCard';
-import { NavLink } from 'react-router-dom';
+import MovieCard from '../MovieCard/MovieCard'
+import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const Movies = ({ movies, seeMovieDetails}) => {
   const singleMovie = movies.map(movie => {
@@ -9,7 +10,6 @@ const Movies = ({ movies, seeMovieDetails}) => {
       <NavLink to={`/${movie.id}`}>
       <MovieCard
         image={movie.poster_path}
-        key={movie.id}
         id={movie.id}
         seeMovieDetails={seeMovieDetails}
         name={movie.title}
@@ -26,3 +26,8 @@ const Movies = ({ movies, seeMovieDetails}) => {
 }
 
 export default Movies
+
+Movies.propTypes = {
+  movies: PropTypes.array.isRequired,
+  seeMovieDetails: PropTypes.func.isRequired
+}

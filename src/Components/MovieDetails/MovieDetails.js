@@ -1,6 +1,7 @@
 import React from 'react'
 import './MovieDetails.css'
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const MovieDetails = ({ singleMovie, displayHome }) => {
     return (
@@ -49,3 +50,8 @@ const formatCurrency = (amount) => {
 }
 
 export default MovieDetails
+
+MovieDetails.propTypes = {
+    singleMovie: PropTypes.object.isRequired,
+    displayHome: PropTypes.func.isRequired
+  }
