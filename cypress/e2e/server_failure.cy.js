@@ -27,4 +27,28 @@ describe('Server Failure Page Flows', () => {
             .get('[alt="cherry tomatoes on vine"]').should('be.visible')
         cy.get('h2').contains('Oops, something went wrong. Please try again later.')
     })
+
+    it('Should see error message if home page fails to load after clicking home button from single movie detail view', () => {
+        cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+            method: 'GET',
+            fixture: '../fixtures/movies.json'
+        })
+        cy.visit('http://localhost:3000')
+        cy.get('#694919').click()
+        cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
+            method: 'GET',
+            fixture: '../fixtures/single_movie.json'
+        })
+        cy.visit('http://localhost:3000/694919')
+        cy.get('.homeButton').click()
+        cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+            method: 'GET',
+            fixture: ''
+        })
+        cy.visit('http://localhost:3000/')
+        cy.get('h1').contains('Tiny Tomatoes')
+            .get('.logo').should('be.visible')
+            .get('[alt="cherry tomatoes on vine"]').should('be.visible')
+        cy.get('h2').contains('Oops, something went wrong. Please try again later.')
+    })
 })
