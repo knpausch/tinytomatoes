@@ -47,7 +47,7 @@ class App extends Component {
         }}/>
          <Route exact path="/:id" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
-          <MovieDetails singleMovie={this.state.singleMovie}/>
+          <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/>
         }}/>
       </main>
     )
