@@ -8,10 +8,11 @@ const Movies = ({ movies, seeMovieDetails}) => {
     return (
       <NavLink to={`/${movie.id}`}>
       <MovieCard
-        image={movie['poster_path']}
-        key={movie['id']}
-        id={movie['id']}
+        image={movie.poster_path}
+        key={movie.id}
+        id={movie.id}
         seeMovieDetails={seeMovieDetails}
+        name={movie.title}
       />
       </NavLink>
     )
