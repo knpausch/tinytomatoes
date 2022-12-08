@@ -2,7 +2,7 @@ import Movies from '../Movies/Movies'
 import './App.css'
 import { Component } from 'react'
 import MovieDetails from '../MovieDetails/MovieDetails'
-import { Route, NavLink } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 const logo = require('../../Images/cherry-tomato.png')
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
     super() 
     this.state = {
       movies: [],
-      singleMovie: "",
+      singleMovie: {},
       movieID: "",
       error: "", 
     } 
@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   displayHome = () => {
-    this.setState({singleMovie: ""})
+    this.setState({singleMovie: {}})
   }
 
   render() {
@@ -47,7 +47,7 @@ class App extends Component {
         }}/>
          <Route exact path="/:id" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
-          <MovieDetails singleMovie={this.state.singleMovie}/>
+          <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/>
         }}/>
       </main>
     )
