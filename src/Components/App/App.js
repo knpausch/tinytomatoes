@@ -39,19 +39,15 @@ class App extends Component {
   }
 
   filterByRating = (numStars) => {
-    console.log("You selected: ", numStars)
-    console.log(this.state.movies.length)
     numStars = parseInt(numStars)
     let filteredList = this.state.movies.filter(movie => {
       if (numStars === 0) {
-        console.log("HELLOOOOOOO")
         return movie
       } else {
         return Math.round(movie.average_rating/2)===numStars
       }
     })
     this.setState({ filteredMovies: filteredList, rating: numStars})
-    console.log("Filtered List: ", filteredList)
   }
 
   render() {

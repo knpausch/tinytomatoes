@@ -33,7 +33,7 @@ const formatGenres = (genres) => {
 } 
 
 const formatRating = (rating) => {
-  return rating.toFixed(2)+"/10"
+  return Math.round(rating/2)
 }
 
 const formatDate = (date) => {
