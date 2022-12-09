@@ -8,57 +8,70 @@ const logo = require('../../Images/cherry-tomato.png')
 
 class App extends Component {
   constructor() {
-    super() 
+    super()
     this.state = {
       movies: [],
       singleMovie: {},
       movieID: "",
       rating: 0,
-      error: "", 
-    } 
+      error: "",
+      filteredMovies: []
+    }
   }
 
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(response => response.json())
-    .then(data => this.setState({movies: data.movies}))
-    .catch(error => this.setState({error: "Oops, something went wrong. Please try again later."}))
+      .then(response => response.json())
+      .then(data => this.setState({ movies: data.movies, filteredMovies: data.movies }))
+      .catch(error => this.setState({ error: "Oops, something went wrong. Please try again later." }))
   }
 
   seeMovieDetails = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    .then(response => response.json())
-    .then(data => {this.setState({singleMovie: data.movie, movieID: id})})
-    .catch(error => this.setState({error: "Oops, something went wrong. Please try again later."}))
+      .then(response => response.json())
+      .then(data => { this.setState({ singleMovie: data.movie, movieID: id }) })
+      .catch(error => this.setState({ error: "Oops, something went wrong. Please try again later." }))
   }
 
   displayHome = () => {
-    this.setState({singleMovie: {}})
+    this.setState({ singleMovie: {} })
+    this.filterByRating("0")
   }
 
   filterByRating = (numStars) => {
-    console.log("you selected: " + numStars)
-    this.setState({rating: parseInt(numStars)})
+    console.log("You selected: ", numStars)
+    console.log(this.state.movies.length)
+    numStars = parseInt(numStars)
+    let filteredList = this.state.movies.filter(movie => {
+      if (numStars === 0) {
+        console.log("HELLOOOOOOO")
+        return movie
+      } else {
+        return Math.round(movie.average_rating/2)===numStars
+      }
+    })
+    this.setState({ filteredMovies: filteredList, rating: numStars})
+    console.log("Filtered List: ", filteredList)
   }
 
   render() {
     return (
       <main>
         <header>
-          <img className='logo' src={logo} alt='cherry tomatoes on vine'/>
+          <img className='logo' src={logo} alt='cherry tomatoes on vine' />
           <h1>Tiny Tomatoes</h1>
         </header>
         <Route exact path="/" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
-          <div>
-            <RatingFilter filterByRating={this.filterByRating}/>
-            <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails}/>
-          </div>
-        }}/>
-         <Route exact path="/:id" render={() => {
+            <div>
+              <RatingFilter filterByRating={this.filterByRating} />
+              <Movies movies={this.state.filteredMovies} seeMovieDetails={this.seeMovieDetails} />
+            </div>
+        }} />
+        <Route exact path="/:id" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
-          <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome}/>
-        }}/>
+            <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome} />
+        }} />
       </main>
     )
   }
