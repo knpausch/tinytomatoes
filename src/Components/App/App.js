@@ -13,7 +13,7 @@ class App extends Component {
       movies: [],
       singleMovie: {},
       movieID: "",
-      rating: null,
+      rating: 0,
       error: "", 
     } 
   }
@@ -32,17 +32,13 @@ class App extends Component {
     .catch(error => this.setState({error: "Oops, something went wrong. Please try again later."}))
   }
 
-  updateRating = (value) => {
-    this.setState({rating: value})
-  }
-
   displayHome = () => {
     this.setState({singleMovie: {}})
   }
 
   filterByRating = (numStars) => {
-    console.log("HELLO")
     console.log("you selected: " + numStars)
+    this.setState({rating: parseInt(numStars)})
   }
 
   render() {
