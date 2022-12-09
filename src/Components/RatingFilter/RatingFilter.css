@@ -1,0 +1,28 @@
+.rating-options {
+  border-style: none;
+}
+
+.rating-options, .reset-button {
+  border-radius: 0.5em;
+  background-color: #A68555;
+  cursor: pointer;
+  height: 6vh;
+  font-size: 1.5em;
+  color: #0E1226;
+}
+
+.reset-button {
+  background-color: #E3DBC3;
+  border: solid 2px #A68555;
+}
+
+.fiter-section {
+  display: flex;
+  margin-top: 4vh;
+  justify-content: flex-end;
+  margin-right: 5vw;
+}
+
+.drop-down-menu {
+  margin-left: 1vw;
+}

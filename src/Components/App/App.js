@@ -3,6 +3,7 @@ import './App.css'
 import { Component } from 'react'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import { Route } from 'react-router-dom'
+import RatingFilter from '../RatingFilter/RatingFilter'
 const logo = require('../../Images/cherry-tomato.png')
 
 class App extends Component {
@@ -43,7 +44,10 @@ class App extends Component {
         </header>
         <Route exact path="/" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
-          <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails}/>
+          <div>
+            <RatingFilter />
+            <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails}/>
+          </div>
         }}/>
          <Route exact path="/:id" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
