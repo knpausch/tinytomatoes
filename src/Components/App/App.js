@@ -40,6 +40,11 @@ class App extends Component {
     this.setState({singleMovie: {}})
   }
 
+  filterByRating = (numStars) => {
+    console.log("HELLO")
+    console.log("you selected: " + numStars)
+  }
+
   render() {
     return (
       <main>
@@ -50,7 +55,7 @@ class App extends Component {
         <Route exact path="/" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
           <div>
-            <RatingFilter />
+            <RatingFilter filterByRating={this.filterByRating}/>
             <Movies movies={this.state.movies} seeMovieDetails={this.seeMovieDetails}/>
           </div>
         }}/>
