@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 const Movies = ({ movies, seeMovieDetails}) => {
   const singleMovie = movies.map(movie => {
     return (
-      <NavLink to={`/${movie.id}`}>
+      <NavLink key={movie.id} to={`/${movie.id}`}>
       <MovieCard
         image={movie.poster_path}
         id={movie.id}

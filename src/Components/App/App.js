@@ -13,6 +13,7 @@ class App extends Component {
       movies: [],
       singleMovie: {},
       movieID: "",
+      rating: null,
       error: "", 
     } 
   }
@@ -29,6 +30,10 @@ class App extends Component {
     .then(response => response.json())
     .then(data => {this.setState({singleMovie: data.movie, movieID: id})})
     .catch(error => this.setState({error: "Oops, something went wrong. Please try again later."}))
+  }
+
+  updateRating = (value) => {
+    this.setState({rating: value})
   }
 
   displayHome = () => {
