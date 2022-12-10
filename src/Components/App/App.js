@@ -15,7 +15,7 @@ class App extends Component {
       movieID: "",
       rating: 0,
       error: "",
-      filteredMovies: []
+      filteredMovies: [],
     }
   }
 
@@ -47,8 +47,7 @@ class App extends Component {
         return Math.round(movie.average_rating/2)===numStars
       }
     })
-    this.state.filteredMovies.length ? this.setState({ filteredMovies: filteredList, rating: numStars}) : 
-    <h2>There are currently no movies available for this rating. Reset or select another rating.</h2>
+    this.setState({ filteredMovies: filteredList, rating: numStars}) 
   }
 
   render() {
