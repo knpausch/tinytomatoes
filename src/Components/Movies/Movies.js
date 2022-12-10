@@ -4,7 +4,7 @@ import MovieCard from '../MovieCard/MovieCard'
 import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-const Movies = ({ rating, movies, seeMovieDetails}) => {
+const Movies = ({ movies, seeMovieDetails}) => {
   const singleMovie = movies.map(movie => {
     return (
       <NavLink key={movie.id} to={`/${movie.id}`}>

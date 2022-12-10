@@ -23,4 +23,16 @@ describe('Page Load Flows', () => {
                 .get('div').eq(4).find('img').should('have.attr', 'id', '581392')
         })
     })
+
+    it('Should filter movies when user selects a rating and display only those movies', () => {
+      cy.get('.rating-options').select("3")
+      cy.get('.movie-container').within(() => {
+          cy.get('div').should('have.length', 3)
+              .get('div').eq(0).find('img').should('have.attr', 'id', '694919')
+              // .get('div').eq(1).find('img').should('have.attr', 'id', '337401')
+              .get('div').eq(1).find('img').should('have.attr', 'id', '718444')
+              .get('div').eq(2).find('img').should('have.attr', 'id', '539885')
+              // .get('div').eq(4).find('img').should('have.attr', 'id', '581392')
+      })
+  })
 })
