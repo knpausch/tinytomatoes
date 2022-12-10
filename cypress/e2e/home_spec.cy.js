@@ -29,10 +29,23 @@ describe('Page Load Flows', () => {
       cy.get('.movie-container').within(() => {
           cy.get('div').should('have.length', 3)
               .get('div').eq(0).find('img').should('have.attr', 'id', '694919')
-              // .get('div').eq(1).find('img').should('have.attr', 'id', '337401')
               .get('div').eq(1).find('img').should('have.attr', 'id', '718444')
               .get('div').eq(2).find('img').should('have.attr', 'id', '539885')
-              // .get('div').eq(4).find('img').should('have.attr', 'id', '581392')
       })
   })
+
+  it('Should filter movies by another rating and display those movies', () => {
+    cy.get('.rating-options').select("4")
+    cy.get('.movie-container').within(() => {
+        cy.get('div').should('have.length', 1)
+            .get('div').eq(0).find('img').should('have.attr', 'id', '581392')
+    })
+    cy.get('.rating-options').select("2")
+    cy.get('.movie-container').within(() => {
+        cy.get('div').should('have.length', 1)
+          .get('div').eq(0).find('img').should('have.attr', 'id', '337401')
+    })
+  })
 })
+
+  
