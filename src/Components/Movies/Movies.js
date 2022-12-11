@@ -9,7 +9,7 @@ const Movies = ({ loading, movies, seeMovieDetails}) => {
     if(moviesList.length>0) {
       const displayMovies = moviesList.map(movie => {
         return (
-          <NavLink key={movie.id} to={`/${movie.id}`}>
+          <NavLink key={movie.id} to={`/movie/${movie.id}`}>
           <MovieCard
             image={movie.poster_path}
             id={movie.id}
