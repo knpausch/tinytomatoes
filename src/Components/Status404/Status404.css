@@ -1,0 +1,11 @@
+.redirect-button {
+    background-color: #E3DBC3;
+    border: solid 2px #A68555;
+    margin-top: 5vh;
+}
+
+.redirect-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
