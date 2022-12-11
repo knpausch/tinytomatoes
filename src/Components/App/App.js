@@ -2,8 +2,9 @@ import Movies from '../Movies/Movies'
 import './App.css'
 import { Component } from 'react'
 import MovieDetails from '../MovieDetails/MovieDetails'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import RatingFilter from '../RatingFilter/RatingFilter'
+import Status404 from '../Status404/Status404'
 const logo = require('../../Images/cherry-tomato.png')
 
 class App extends Component {
@@ -59,17 +60,20 @@ class App extends Component {
           <img className='logo' src={logo} alt='cherry tomatoes on vine' />
           <h1>Tiny Tomatoes</h1>
         </header>
-        <Route exact path="/" render={() => {
-          return this.state.error ? <h2>{this.state.error}</h2> :
-            <div>
-              <RatingFilter filterByRating={this.filterByRating} /> 
-              <Movies movies={this.state.filteredMovies} loading={this.state.loading} seeMovieDetails={this.seeMovieDetails} />
-            </div>
-        }} />
-        <Route exact path="/movie/:id" render={() => {
-          return this.state.error ? <h2>{this.state.error}</h2> :
-            <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome} />
-        }} />
+        <Switch>
+          <Route exact path="/" render={() => {
+            return this.state.error ? <h2>{this.state.error}</h2> :
+              <div>
+                <RatingFilter filterByRating={this.filterByRating} /> 
+                <Movies movies={this.state.filteredMovies} loading={this.state.loading} seeMovieDetails={this.seeMovieDetails} />
+              </div>
+          }} />
+          <Route exact path="/movie/:id" render={() => {
+            return this.state.error ? <h2>{this.state.error}</h2> :
+              <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome} />
+          }} />
+          <Route component={Status404}/>
+        </Switch>
       </main>
     )
   }
