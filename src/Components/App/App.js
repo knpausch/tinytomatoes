@@ -66,7 +66,7 @@ class App extends Component {
               <Movies movies={this.state.filteredMovies} loading={this.state.loading} seeMovieDetails={this.seeMovieDetails} />
             </div>
         }} />
-        <Route exact path="/:id" render={() => {
+        <Route exact path="/movie/:id" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
             <MovieDetails singleMovie={this.state.singleMovie} displayHome={this.displayHome} />
         }} />
