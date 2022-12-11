@@ -45,6 +45,7 @@ class App extends Component {
     numStars = parseInt(numStars)
     let filteredList = this.state.movies.filter(movie => {
       if (numStars === 0) {
+        document.getElementById('ratingOptions').value = '0'
         return movie
       } else {
         return Math.round(movie.average_rating/2)===numStars
