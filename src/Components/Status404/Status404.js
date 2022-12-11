@@ -1,4 +1,3 @@
-import './Status404.css'
 import React from 'react'
 
 const Status404 = () => {
