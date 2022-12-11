@@ -16,13 +16,15 @@ class App extends Component {
       rating: 0,
       error: "",
       filteredMovies: [],
+      loading: false
     }
   }
 
   componentDidMount() {
+    this.setState({loading: true})
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
-      .then(data => this.setState({ movies: data.movies, filteredMovies: data.movies }))
+      .then(data => this.setState({ movies: data.movies, filteredMovies: data.movies, loading: false }))
       .catch(error => this.setState({ error: "Oops, something went wrong. Please try again later." }))
   }
 
@@ -47,7 +49,7 @@ class App extends Component {
         return Math.round(movie.average_rating/2)===numStars
       }
     })
-    this.setState({ filteredMovies: filteredList, rating: numStars}) 
+    this.setState({ filteredMovies: filteredList, rating: numStars})
   }
 
   render() {
@@ -60,8 +62,8 @@ class App extends Component {
         <Route exact path="/" render={() => {
           return this.state.error ? <h2>{this.state.error}</h2> :
             <div>
-              <RatingFilter filterByRating={this.filterByRating} />
-              <Movies movies={this.state.filteredMovies} seeMovieDetails={this.seeMovieDetails} />
+              <RatingFilter filterByRating={this.filterByRating} /> 
+              <Movies movies={this.state.filteredMovies} loading={this.state.loading} seeMovieDetails={this.seeMovieDetails} />
             </div>
         }} />
         <Route exact path="/:id" render={() => {

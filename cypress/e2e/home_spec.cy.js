@@ -7,10 +7,12 @@ describe('Page Load Flows', () => {
         cy.visit('http://localhost:3000');
     })
 
-    it('Should see title of application upon page load', () => {
+    it('Should see title of application, reset button, and rating dropdown upon page load', () => {
         cy.get('h1').contains('Tiny Tomatoes')
             .get('.logo').should('be.visible')
             .get('[alt="cherry tomatoes on vine"]').should('be.visible')
+            .get('.rating-options').should('be.visible')
+            .get('.reset-button')
     })
 
     it('Should display all movies upon page load', () => {
@@ -47,13 +49,29 @@ describe('Page Load Flows', () => {
     })
   })
 
-  // it('Should display message to user if no movies exist for the rating they select', () => {
-  //   cy.get('.rating-options').select("1")
-  //   cy.get('h1').contains('Tiny Tomatoes')
-  //     .get('.logo').should('be.visible')
-  //     .get('[alt="cherry tomatoes on vine"]').should('be.visible')
-  //     .get('h2').contains('Oops, something went wrong. Please try again later.')
-  // })
+  it('Should display all movies when reset button is clicked after filtering by rating', () => {
+    cy.get('.rating-options').select("3")
+      cy.get('.movie-container').within(() => {
+          cy.get('div').should('have.length', 3)
+            .get('div').eq(0).find('img').should('have.attr', 'id', '694919')
+            .get('div').eq(1).find('img').should('have.attr', 'id', '718444')
+            .get('div').eq(2).find('img').should('have.attr', 'id', '539885')
+      })
+    cy.get('.reset-button').click()
+    cy.get('.movie-container').within(() => {
+        cy.get('div').should('have.length', 5)
+            .get('div').eq(0).find('img').should('have.attr', 'id', '694919')
+            .get('div').eq(1).find('img').should('have.attr', 'id', '337401')
+            .get('div').eq(2).find('img').should('have.attr', 'id', '718444')
+            .get('div').eq(3).find('img').should('have.attr', 'id', '539885')
+            .get('div').eq(4).find('img').should('have.attr', 'id', '581392')
+    })
+  })
+
+  it('Should display message to user if no movies exist for the rating they select', () => {
+    cy.get('.rating-options').select("1")
+    cy.get('.empty-error').contains("There are currently no movies available for this rating. Reset or select another rating.")
+  })
 })
 
   
