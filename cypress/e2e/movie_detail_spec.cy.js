@@ -15,6 +15,8 @@ describe('Movie Detail Interaction Flows', () => {
       cy.get('#694919').click()
       cy.get('.poster-mini').should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg')
         .get('.movieInfo').should('contain', 'Money Plane')
+        .and('contain', 'Genres: Action')
+        .and('contain', 'Rating: 3')
         .and('contain', 'A professional thief with $40 million in debt and his family\'s life on the line must commit one final heist - rob a futuristic airborne casino filled with the world\'s most dangerous criminals.')
       })
 
@@ -33,6 +35,8 @@ describe('Movie Detail Interaction Flows', () => {
         cy.get('h1').contains('Tiny Tomatoes')
             .get('.logo').should('be.visible')
             .get('[alt="cherry tomatoes on vine"]').should('be.visible')
+            .get('.rating-options').should('be.visible')
+            .get('.reset-button')
         cy.get('.movie-container').within(() => {
             cy.get('div').should('have.length', 5)
                 .get('div').eq(0).find('img').should('have.attr', 'id', '694919')
