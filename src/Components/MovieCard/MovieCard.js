@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import './MovieCard.css'
 import PropTypes from 'prop-types'
 
