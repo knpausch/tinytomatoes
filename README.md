@@ -42,18 +42,21 @@ GitHub Project Board | Excalidraw | Figma | Zoom | Slack
 - Incorporate Cypress to test the UI/UX 
 
 ## Preview
+  
 ### Display All Movies and View Single Movie Details
-### Filter By Rating
 
+### Filter By Rating
 
 <!-- ROADMAP -->
 ## Roadmap
 ### Component Tree
 ![tree](https://user-images.githubusercontent.com/19957834/207121015-ddf61c98-fad7-4296-b795-3ed3fc5303af.png)
 ### Figma Wireframing
-![home](https://user-images.githubusercontent.com/19957834/207121082-cf70a977-937c-4d4e-b40a-feeef8af8e69.jpg)
-![movie-detail](https://user-images.githubusercontent.com/19957834/207121101-44b2c452-16fe-430a-abb8-663ca46422ef.jpg)
+<img src="https://user-images.githubusercontent.com/19957834/207121082-cf70a977-937c-4d4e-b40a-feeef8af8e69.jpg" alt="drawing" width="600"/>
+<img src="https://user-images.githubusercontent.com/19957834/207121101-44b2c452-16fe-430a-abb8-663ca46422ef.jpg" alt="drawing" width="600"/>
 
+<!-- ![movie-detail](https://user-images.githubusercontent.com/19957834/207121101-44b2c452-16fe-430a-abb8-663ca46422ef.jpg)
+ -->
 ## Reflections
 This project gave us to opportunity to learn how to work as a unit in a remote setting while implementing new concepts like React, Router, and Cypress. Moments when we were stuck in our tracks, we would independently research online resources or reach out to experienced colleagues to gain a better understanding. We also deepened our project management skills by creating a wireframe design, component architecture map, creating User Stories, and turning those user stories into tickets on our GitHub project board before drafting code. This workflow helped us maintain focus for daily goals as well as a healthy collaboration. 
 
