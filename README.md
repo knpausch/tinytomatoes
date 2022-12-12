@@ -1,27 +1,3 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-<a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -35,6 +11,8 @@
 
 Tiny Tomatoes is a dynamic application that displays an assortment of movies for the user to view and filter based upon its star rating. Upon selecting a movie, the user may explore the movie's details such as its overview, rating, budget revenue, etc. This application was constructed utilizing new concepts like React, Router, and Cypress testing to write more modular and quality-assured code. On top of writing clean code, we incorporated async JS concepts like fetching to an API and displaying proper error handling from the user and server side for a smoother user experience.
 
+Tiny Tomatoes is a paired project that was completed after the 15 week mark as a software developer at Turing School of Software Developer and Design. We were given 13 days to complete this project and it took us approximately 43 hours total to finish. We used a thorough DTR, GitHub project board, calendaring, and an Agile workflow to communicate while balancing project work with our full-time coursework and working remotely.
+
 ## Built With
 
 [![React][React.js]][React-url]
@@ -44,7 +22,13 @@ Tiny Tomatoes is a dynamic application that displays an assortment of movies for
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
 
-<!-- GETTING STARTED -->
+## Other Technologies
+- GitHub Project Board
+- Excalidraw
+- Figma
+- Zoom
+- Slack
+
 ## Installation
 
 1. Clone the repo
@@ -63,17 +47,20 @@ Tiny Tomatoes is a dynamic application that displays an assortment of movies for
 - Incorporate Cypress to test the UI/UX 
 
 ## Preview
-# Display All Movies and View Single Movie Details
-# Filter By Rating
+### Display All Movies and View Single Movie Details
+### Filter By Rating
 
 
 <!-- ROADMAP -->
 ## Roadmap
-# Component Tree
+### Component Tree
 ![tree](https://user-images.githubusercontent.com/19957834/207121015-ddf61c98-fad7-4296-b795-3ed3fc5303af.png)
-# Figma Wireframing
+### Figma Wireframing
 ![home](https://user-images.githubusercontent.com/19957834/207121082-cf70a977-937c-4d4e-b40a-feeef8af8e69.jpg)
 ![movie-detail](https://user-images.githubusercontent.com/19957834/207121101-44b2c452-16fe-430a-abb8-663ca46422ef.jpg)
+
+## Reflections
+This project gave us to opportunity to learn how to work as a unit in a remote setting while implementing new concepts like React, Router, and Cypress. Moments when we were stuck in our tracks, we would independently research online resources or reach out to experienced colleagues to gain a better understanding. We also deepened our project management skills by creating a wireframe design, component architecture map, creating User Stories, and turning those user stories into tickets on our GitHub project board before drafting code. This workflow helped us maintain focus for daily goals as well as a healthy collaboration. 
 
 <!-- CONTACT -->
 ## Contact
@@ -81,14 +68,6 @@ Tiny Tomatoes is a dynamic application that displays an assortment of movies for
 [![Contributors][contributors-shield]][contributors-url]
 - Keyaanna (Kiko) Pausch [GitHub](https://github.com/knpausch) | [LinkedIn](https://www.linkedin.com/in/knpausch/)
 - Jennifer Yacoubian [GitHub](https://github.com/jmyacobn) | [LinkedIn](https://www.linkedin.com/in/jennifer-yacoubian/)
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/badge/Contributors-2-2ea44f?style=for-the-badge
