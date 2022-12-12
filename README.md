@@ -33,7 +33,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Tiny Tomatoes is a dynamic application that displays an assortment of movies for the user to view and filter based upon its star rating. Upon selecting a movie, the user may explore the movie's details such as its overview, rating, budget revenue, etc. This application was constructed utilizing new concepts like React, Router, and Cypress testing to write more modular and quality-assured code. On top of writing clean code, we incorporated async JS concepts like fetching to an API and displaying proper error handling from the user and server side for a smoother user experience.
 
 ## Built With
 
@@ -45,11 +45,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
 
 <!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these steps:
-
-### Installation
+## Installation
 
 1. Clone the repo
    ```sh
@@ -62,23 +58,22 @@ To get a local copy up and running follow these steps:
    ```
    
 <!-- USAGE EXAMPLES -->
-## Usage
+## Learning Goals
+- Utilize React and React Router to create a multi-page UX application
+- Incorporate Cypress to test the UI/UX 
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+## Preview
+# Display All Movies and View Single Movie Details
+# Filter By Rating
 
 
 <!-- ROADMAP -->
 ## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
+# Component Tree
+![tree](https://user-images.githubusercontent.com/19957834/207121015-ddf61c98-fad7-4296-b795-3ed3fc5303af.png)
+# Figma Wireframing
+![home](https://user-images.githubusercontent.com/19957834/207121082-cf70a977-937c-4d4e-b40a-feeef8af8e69.jpg)
+![movie-detail](https://user-images.githubusercontent.com/19957834/207121101-44b2c452-16fe-430a-abb8-663ca46422ef.jpg)
 
 <!-- CONTACT -->
 ## Contact
