@@ -44,8 +44,10 @@ GitHub Project Board | Excalidraw | Figma | Zoom | Slack
 ## Preview
   
 ### Display All Movies and View Single Movie Details
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/19957834/207158365-b9c059d4-01ee-462b-8a88-6d4e82c6b24c.gif)
 
 ### Filter By Rating
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/19957834/207158015-e0c19558-0f25-4514-bc5b-033eea96e2c1.gif)
 
 <!-- ROADMAP -->
 ## Roadmap
