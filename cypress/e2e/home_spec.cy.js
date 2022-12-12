@@ -4,7 +4,7 @@ describe('Page Load Flows', () => {
       method: 'GET',
       fixture: '../fixtures/movies.json'
     })
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3000')
   })
 
   it('Should see title of application, reset button, and rating dropdown upon page load', () => {
