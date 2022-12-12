@@ -21,13 +21,8 @@ Tiny Tomatoes is a paired project that was completed after the 15 week mark as a
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
-
-## Other Technologies
-- GitHub Project Board
-- Excalidraw
-- Figma
-- Zoom
-- Slack
+### Other Technologies
+GitHub Project Board | Excalidraw | Figma | Zoom | Slack
 
 ## Installation
 
