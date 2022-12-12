@@ -36,7 +36,6 @@ describe('Movie Detail Interaction Flows', () => {
       .get('.logo').should('be.visible')
       .get('[alt="cherry tomatoes on vine"]').should('be.visible')
       .get('.rating-options').should('be.visible')
-      .get('.reset-button')
     cy.get('.movie-container').within(() => {
       cy.get('div').should('have.length', 5)
         .get('div').eq(0).find('img').should('have.attr', 'id', '694919')
