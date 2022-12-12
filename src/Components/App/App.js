@@ -13,7 +13,6 @@ class App extends Component {
     this.state = {
       movies: [],
       singleMovie: {},
-      movieID: "",
       rating: 0,
       error: "",
       filteredMovies: [],
@@ -32,7 +31,7 @@ class App extends Component {
   seeMovieDetails = (id) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
       .then(response => response.json())
-      .then(data => { this.setState({ singleMovie: data.movie, movieID: id }) })
+      .then(data => { this.setState({ singleMovie: data.movie }) })
       .catch(error => this.setState({ error: "Oops, something went wrong. Please try again later." }))
   }
 
