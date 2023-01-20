@@ -7,6 +7,9 @@
 </div>
 
 <!-- ABOUT THE PROJECT -->
+## Deployed Link
+[Tiny Tomatoes](https://tinytomatoes.vercel.app/)
+
 ## About The Project
 
 Tiny Tomatoes is a dynamic application that displays an assortment of movies for the user to view and filter based upon its star rating. Upon selecting a movie, the user may explore the movie's details such as its overview, rating, budget revenue, etc. This application was constructed utilizing new concepts like React, Router, and Cypress testing to write more modular and quality-assured code. On top of writing clean code, we incorporated async JS concepts like fetching to an API and displaying proper error handling from the user and server side for a smoother user experience.
